@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testeProgramadorCSharpModelStoreContainer" CdmEntityContainer="testeProgramadorCSharpEntities">
+    <EntitySetMapping Name="empresas">
+      <EntityTypeMapping TypeName="testeProgramadorCSharpModel.empresas">
+        <MappingFragment StoreEntitySet="empresas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uf" ColumnName="uf" />
+          <ScalarProperty Name="nome_fantasia" ColumnName="nome_fantasia" />
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fornecedores">
+      <EntityTypeMapping TypeName="testeProgramadorCSharpModel.fornecedores">
+        <MappingFragment StoreEntitySet="fornecedores">
+          <ScalarProperty Name="tipo_pessoa" ColumnName="tipo_pessoa" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="nome_fornecedor" ColumnName="nome_fornecedor" />
+          <ScalarProperty Name="cpf_cnpj" ColumnName="cpf_cnpj" />
+          <ScalarProperty Name="data_hora_cadastro" ColumnName="data_hora_cadastro" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
