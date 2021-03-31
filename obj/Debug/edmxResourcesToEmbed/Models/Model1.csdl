@@ -1,13 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="testeProgramadorCSharpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="testeProgramadorCSharpEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="empresas" EntityType="testeProgramadorCSharpModel.empresas" />
+    <EntitySet Name="fornecedores" EntityType="testeProgramadorCSharpModel.fornecedores" />
+    <AssociationSet Name="FK_fornecedores_empresas" Association="testeProgramadorCSharpModel.FK_fornecedores_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="fornecedores" EntitySet="fornecedores" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="empresas">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="uf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="nome_fantasia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="cnpj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nome_fantasia" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cnpj" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="fornecedores" Relationship="testeProgramadorCSharpModel.FK_fornecedores_empresas" FromRole="empresas" ToRole="fornecedores" />
   </EntityType>
   <EntityType Name="fornecedores">
@@ -16,23 +24,15 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="empresa" Type="Int32" Nullable="false" />
-    <Property Name="nome_fornecedor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="cpf_cnpj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="data_hora_cadastro" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nome_fornecedor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cpf_cnpj" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="data_hora_cadastro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_pessoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="rg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="data_nascimento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="empresas" Relationship="testeProgramadorCSharpModel.FK_fornecedores_empresas" FromRole="fornecedores" ToRole="empresas" />
-    <Property Name="tipo_pessoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="testeProgramadorCSharpEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="empresas" EntityType="Self.empresas" />
-    <EntitySet Name="fornecedores" EntityType="Self.fornecedores" />
-    <AssociationSet Name="FK_fornecedores_empresas" Association="testeProgramadorCSharpModel.FK_fornecedores_empresas">
-      <End Role="empresas" EntitySet="empresas" />
-      <End Role="fornecedores" EntitySet="fornecedores" />
-    </AssociationSet>
-  </EntityContainer>
   <Association Name="FK_fornecedores_empresas">
     <End Type="testeProgramadorCSharpModel.empresas" Role="empresas" Multiplicity="1" />
     <End Type="testeProgramadorCSharpModel.fornecedores" Role="fornecedores" Multiplicity="*" />

@@ -100,3 +100,8 @@ C:\Users\Borba\source\repos\testeProgramadorCSharp\obj\Debug\testeProgramadorCSh
 C:\Users\Borba\source\repos\testeProgramadorCSharp\obj\Debug\testeProgramadorCSharp.csproj.CopyComplete
 C:\Users\Borba\source\repos\testeProgramadorCSharp\obj\Debug\testeProgramadorCSharp.dll
 C:\Users\Borba\source\repos\testeProgramadorCSharp\obj\Debug\testeProgramadorCSharp.pdb
+C:\Users\Borba\source\repos\testeProgramadorCSharp\bin\Microsoft.Owin.dll
+C:\Users\Borba\source\repos\testeProgramadorCSharp\bin\Owin.dll
+C:\Users\Borba\source\repos\testeProgramadorCSharp\bin\WebApiThrottle.dll
+C:\Users\Borba\source\repos\testeProgramadorCSharp\bin\Microsoft.Owin.xml
+C:\Users\Borba\source\repos\testeProgramadorCSharp\bin\WebApiThrottle.xml

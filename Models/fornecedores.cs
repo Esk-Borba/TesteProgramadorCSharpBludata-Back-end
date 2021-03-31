@@ -18,11 +18,11 @@ namespace testeProgramadorCSharp.Models
         public int empresa { get; set; }
         public string nome_fornecedor { get; set; }
         public string cpf_cnpj { get; set; }
-        public System.DateTime data_hora_cadastro { get; set; }
+        public string data_hora_cadastro { get; set; }
         public string telefone { get; set; }
+        public string tipo_pessoa { get; set; }
         public string rg { get; set; }
         public string data_nascimento { get; set; }
-        public string tipo_pessoa { get; set; }
     
         public virtual empresas empresas { get; set; }
     }
